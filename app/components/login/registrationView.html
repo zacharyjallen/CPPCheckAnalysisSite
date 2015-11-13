@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
 <body>
+<form ng-hide="newUser">
+    <h2>Sign up</h2>
+    Email: <input type="email" ng-model="user.email" /><br />
+    Username: <input type="text" ng-model="user.username" /><br />
+    Password: <input type="password" ng-model="user.password" /><br />
+    <button ng-click="signUp(user)">Sign up</button>
+</form>
 
+<div ng-show="newUser">
+    <h2>Welcome {{currentUser.get('username')}}</h2>
+    <p>You have been successfully created a new account!</p>
+    <button ng-click="logOut()">Log out</button>
+</div>
 </body>
-</html>
